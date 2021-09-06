@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kubernetes WebApp</title>
+    </head>
+    <br />
+<marquee width="90%" direction="right" height="100px" style="color:red;">
+ARTH - The School Of Technologies (2020) !!!
+</marquee>
+
+<style>
+ body{
+         
+          font-size:30px;
+          margin:auto;
+          text-align:center;
+          background-image: url('https://enterprisersproject.com/sites/default/files/styles/large/public/cio_k8s.png');
+          background-repeat: repeat;
+    }
+    
+    h1 {color:white;
+         }
+    #d{
+                font-weight: bold;
+                font-size: 30px;
+                text-align: center;
+                color: white;
+            }
+    #e{
+                font-weight: bold;
+                font-size: 20px;
+                text-align: center;
+                color: black;
+    }
+    input[type=text], select, textarea {
+    width: 50%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+
+}
+	.button {
+  background-color: #DC143C;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+    <br/><br /><br />
+    <h1> Kubernetes Web Application </h1> <br /> <br /> <br />
+   <p id="d">Enter the Kubernetes command </p>
+      
+  <script>
+    function lw()
+    {  
+        var i = document.getElementById("in1").value  
+        var xhr= new XMLHttpRequest();
+        xhr.open("GET","http://192.168.0.103/cgi-bin/task39.py?x="+i,true);
+        xhr.send();
+        xhr.onload=function(){
+              var output=xhr.responseText;
+        document.getElementById("d1").innerHTML=output; 
+              }
+    }
+    </script>
+    <div id = "e" style="color:red;">
+      <input id="in1" type="text"/>
+      <pre>
+  <button id="d2" onclick="lw()" class="button">SUBMIT</button>  
+  <div id="d1"> </div>
+      </pre>
+   </div>
+  </html>
